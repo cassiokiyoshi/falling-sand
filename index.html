@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+      name="description"
+      content="A falling-sand simulation written in C and compiled to WebAssembly."
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Falling Sand — Cassio Kiyoshi</title>
+  </head>
+
+  <body>
+    <div class="glitch-loader" id="glitch-loader" role="status" aria-live="polite">
+      <div class="glitch-loader-content">
+        <p class="glitch-loader-code">C/WASM · EXPERIMENT 001</p>
+        <p class="glitch-loader-title" data-text="LOADING PARTICLES">LOADING PARTICLES</p>
+        <div class="glitch-loader-bar" aria-hidden="true"><span></span></div>
+      </div>
+    </div>
+
+    <header class="experiment-header">
+      <a href="https://cassiokiyoshi.github.io/profile/#playground">
+        ← Back to playground
+      </a>
+
+      <p>Experiment 001</p>
+    </header>
+
+    <main>
+      <section class="introduction">
+        <p class="eyebrow">C · WebAssembly</p>
+
+        <h1>Falling Sand</h1>
+
+        <p>
+          Draw particles and watch a small simulation written
+          in C determine how they move.
+        </p>
+      </section>
+
+      <section class="simulation" aria-labelledby="simulation-title">
+        <div class="simulation-heading">
+          <div>
+            <p class="eyebrow">Simulation</p>
+            <h2 id="simulation-title">Particle field</h2>
+          </div>
+
+          <p id="simulation-status" aria-live="polite">
+            Preparing simulation…
+          </p>
+        </div>
+
+        <div class="controls" aria-label="Drawing tools">
+          <button
+            class="tool is-active"
+            type="button"
+            data-material="sand"
+            aria-pressed="true"
+          >
+            Sand
+          </button>
+
+          <button
+            class="tool"
+            type="button"
+            data-material="water"
+            aria-pressed="false"
+          >
+            Water
+          </button>
+
+          <button
+            class="tool"
+            type="button"
+            data-material="wall"
+            aria-pressed="false"
+          >
+            Wall
+          </button>
+
+          <button
+            class="tool"
+            type="button"
+            data-material="erase"
+            aria-pressed="false"
+          >
+            Erase
+          </button>
+
+          <button id="clear-button" type="button">
+            Clear
+          </button>
+        </div>
+
+        <canvas
+          id="sand-canvas"
+          width="640"
+          height="480"
+          aria-label="Interactive falling-sand simulation"
+        >
+          Your browser does not support the canvas element.
+        </canvas>
+
+        <p class="instructions">
+          Click and drag inside the field to add particles.
+        </p>
+      </section>
+    </main>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
