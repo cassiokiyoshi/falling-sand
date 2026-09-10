@@ -39,7 +39,7 @@ a {
 }
 
 a {
-  text-underline-offset: 0.25em;
+  text-decoration: none;
 }
 
 .glitch-loader {
